@@ -1,9 +1,12 @@
 name: Handle Issues
-on: issues
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
 jobs:
   output-info:
     runs-on: ubuntu-latest
     steps:
       - name: Output event details
-        run: echo "${{ toJSON(github.event)}}"
-
+        run: echo '${{ toJSON(github.event) }}'
